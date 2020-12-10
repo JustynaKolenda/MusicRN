@@ -8,25 +8,25 @@ interface IMusicCafel {
     color: string
     horizontal: "left" | "right"
     vertical: "top" | "bottom",
-    onPress?: ()=>void,
+    onPress: (id:number)=>void,
     title: string,
-    titlePosition: "top" | "bottom"
+    titlePosition: "top" | "bottom",
+    active: boolean,
+    id: number
 }
 
 const MusicCafel = (props:IMusicCafel) => {
-    const [active, setActive] = useState(true)
-
 
     return(
-        (active)?
-            <MusicType>
+        (!props.active)?
+            <MusicType active={false} onPress={()=>props.onPress(props.id)}>
                 <WrapText titlePosition={props.titlePosition}>
                     <TitleM>{props.title}</TitleM>
                 </WrapText>
                 <Circle color={props.color} horizontal={props.horizontal} vertical={props.vertical}/>
             </MusicType>
         : 
-            <MusicTypeActiv>
+            <MusicType active={true}>
                  <Circle color={props.color} horizontal={props.horizontal} vertical={props.vertical}/>
                 <GroupSong> 
                     <SongCirleView>
@@ -36,18 +36,26 @@ const MusicCafel = (props:IMusicCafel) => {
                 <WrapText titlePosition={"bottom"}>
                 <TitleM>{props.title}</TitleM>
                 </WrapText>
-            </MusicTypeActiv>
+            </MusicType>
     )
 }
 
-const MusicType = styled.TouchableOpacity({
-    backgroundColor: '#1e1e1b',
-    height: '50%',
-    width: '50%',
-    border: '2px solid #2c2a29',
-    alignItems: 'center',
-    overflow: 'hidden'
+interface IMusicTypeP {
+    active: boolean
+}
+
+const MusicType = styled.TouchableOpacity({},(props:IMusicTypeP)=>{
+    return({
+        backgroundColor:(props.active)?'#010101':'#1e1e1b',
+        height: '50%',
+        width: '50%',
+        border: '2px solid #2c2a29',
+        alignItems: 'center',
+        overflow: 'hidden',
+        justifyContent:(props.active)?'center':'',
+    })
 })
+
 const TitleM = styled.Text({
     color: '#696970',
     fontSize: 18,
@@ -119,16 +127,6 @@ const Circle = styled(Animated.View)({},(props:ICircleP)=>{
             transform
         }
     )
-})
-
-const MusicTypeActiv = styled.TouchableOpacity({
-    backgroundColor: '#010101',
-    height: '50%',
-    width: '50%',
-    border: '2px solid #2c2a29',
-    alignItems: 'center',
-    overflow: 'hidden',
-    justifyContent: 'center',
 })
 
 
