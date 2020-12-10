@@ -9,7 +9,14 @@ const BasicView = () => {
    return(
         <SafeArea>
                 <ViewArea>
-                    <Title>Muzyka</Title>  
+                    <GroupImage>
+                        <ImageM source={{uri: 'consol'}}/>
+                        <Title>Korg Per</Title>
+                    </GroupImage>
+                    <GroupImage>
+                        <ImageM source={{uri: 'electricPiano'}}/>
+                        <Title>Korg 20</Title>
+                    </GroupImage>
                 </ViewArea>
                  <ViewGroup>
                     <MusicType>
@@ -40,10 +47,32 @@ const BasicView = () => {
    ) 
 }
 
-const Title = styled.Text({
-    color: 'red',
-    fontSize: 15,
+const ViewArea = styled.View({
+    backgroundColor: '#000000',
+    height: 180,
+    flexDirection: 'row',
 })
+
+const Title = styled.Text({
+    fontWeight: 'bold',
+    fontSize: 15,
+    color: '#636160',
+    marginTop: 10
+})
+
+const GroupImage = styled.View({
+    alignItems: 'center',
+    justifyContent:'center'
+})
+
+const widthImage = (width/3)-10
+
+const ImageM = styled.Image({
+    width: widthImage,
+    height: widthImage-10,
+    marginLeft: 20,
+    marginTop: 20,
+}) 
 
 const TitleM = styled.Text({
     color: '#696970',
@@ -59,10 +88,6 @@ const WrapTextBottom = styled(Animated.View)({
 
 const SafeArea = styled.SafeAreaView({
     backgroundColor: '#29292e'
-})
-const ViewArea = styled.View({
-    backgroundColor: '#000000',
-    height: 180,
 })
 
 const heightGroup = height -250
@@ -148,7 +173,6 @@ const GroupSong = styled.TouchableOpacity({
     justifyContent: 'center',
     alignItems: 'center'
 })
-
 
 const SongCirle = styled(Animated.Image)({
     width: songR,
