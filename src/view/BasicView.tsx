@@ -1,7 +1,8 @@
 import React from 'react' 
-import { FlatList, SafeAreaView, ScrollView, View} from 'react-native'
+import { Dimensions,} from 'react-native'
 import styled from 'styled-components/native';
 
+const widthB = Dimensions.get('window')
 
 const BasicView = () => {
 
@@ -11,18 +12,22 @@ const BasicView = () => {
                     <Title>Muzyka</Title>  
                 </ViewArea>
                  <ViewGroup>
-                    <MusicType>
-                        <Title>WARM</Title>  
-                    </MusicType>
-                    <MusicType>
-                        <Title>EXCITED</Title>  
-                    </MusicType>
-                    <MusicType>
-                        <Title>RELAXED</Title>  
-                    </MusicType>
-                    <MusicType>
-                        <Title>BRIGHT</Title>  
-                    </MusicType>
+                    <ViewBox>
+                        <MusicType>
+                            <TitleM>WARM</TitleM>  
+                        </MusicType>
+                        <MusicType>
+                            <TitleM>EXCITED</TitleM>  
+                        </MusicType>
+                    </ViewBox>
+                    <ViewBox>
+                        <MusicType>
+                            <TitleM>RELAXED</TitleM>  
+                        </MusicType>
+                        <MusicType>
+                            <TitleM>BRIGHT</TitleM>  
+                        </MusicType>
+                    </ViewBox>
                 </ViewGroup>
         </SafeArea>
    ) 
@@ -32,28 +37,38 @@ const Title = styled.Text({
     color: 'red',
     fontSize: 15,
 })
+const TitleM = styled.Text({
+    color: '#696970',
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 10,
+})
 const SafeArea = styled.SafeAreaView({
     backgroundColor: '#29292e'
 })
 const ViewArea = styled.View({
     backgroundColor: '#000000',
     height: 180,
-    width: '100%'
 })
 
 const ViewGroup = styled.View({
     flexDirection: 'row', 
-    flexWrap: 'wrap' 
+    flexWrap: 'wrap',
 })
 
 const MusicType = styled.TouchableOpacity({
     backgroundColor: '#29292e',
     height: 300,
-    width: 200,
+    width: '100%',
     borderColor: '#000000',
     border: 'solid 1px',
-    flexWrap: 'wrap'
-    
+    alignItems: 'center',
+})
+
+const ViewBox = styled.View({
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex:1
 })
 
 
