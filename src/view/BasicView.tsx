@@ -21,7 +21,10 @@ const BasicView = () => {
                         <Circle color={'#59302d'} horizontal={"left"} vertical={"bottom"}/>
                     </MusicType>
                     <MusicTypeActiv>
-                        <Circle color={'#293231'} horizontal={"right"} vertical={"top"}/>  
+                        <Circle color={'#293231'} horizontal={"right"} vertical={"top"}/> 
+                        <GroupSong> 
+                            <SongCirle source={{uri: 'ic_sound'}}/> 
+                        </GroupSong>
                         <WrapTextBottom>
                             <TitleM >RELAXED</TitleM>
                         </WrapTextBottom>
@@ -51,7 +54,7 @@ const TitleM = styled.Text({
 
 const WrapTextBottom = styled(Animated.View)({
     position: "absolute",
-    bottom: 0,
+    bottom: 20,
 })
 
 const SafeArea = styled.SafeAreaView({
@@ -83,14 +86,14 @@ const MusicTypeActiv = styled.TouchableOpacity({
     width: '50%',
     border: '2px solid #2c2a29',
     alignItems: 'center',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    justifyContent: 'center',
 })
 
 interface ICircleProps{
     color: string,
     horizontal: "left" | "right"
     vertical: "top" | "bottom",
-    transform?: "topLeft" | "topRight" | "bottomLeft" | "bottomRight" 
 }
 
 const Circle = styled(Animated.View)({},(props:ICircleProps)=>{
@@ -134,6 +137,26 @@ const Circle = styled(Animated.View)({},(props:ICircleProps)=>{
             transform
         }
     )
+})
+
+const songR = (width/2)/3; 
+const GroupSong = styled.TouchableOpacity({
+    border: '2px solid #4b5a56',
+    width: (songR + 15),
+    height: (songR + 15),
+    borderRadius: songR,
+    justifyContent: 'center',
+    alignItems: 'center'
+})
+
+
+const SongCirle = styled(Animated.Image)({
+    width: songR,
+    height: songR,
+    borderRadius: songR,
+    borderColor: '#97bab0',
+    backgroundColor: '#b3dbd0',
+   
 })
 
 export default BasicView
