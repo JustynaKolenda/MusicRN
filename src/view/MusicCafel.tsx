@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, Dimensions, View } from 'react-native';
+import { Animated, Dimensions, Platform, View } from 'react-native';
 import styled from 'styled-components/native';
 import Sound from 'react-native-sound';
 
@@ -94,6 +94,7 @@ const WrapT = styled.View({},(props:IWrapTProps)=>{
     let titlePosition;
     if(props.titlePosition == "top"){
         titlePosition= {
+            marginTop: (Platform.OS)? 0 : 40,
             top: -70
         }
     }
