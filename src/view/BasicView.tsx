@@ -30,10 +30,10 @@ const BasicView = () => {
                     </GroupImage>
                 </ViewArea>
                  <ViewGroup>
-                     <MusicCafel id={0} onPress={onPress} active={(active==0)} titlePosition={"top"} title={'WARM'} color={'#2d2925'} horizontal={"right"} vertical={"bottom"}/>
-                     <MusicCafel  id={1} onPress={onPress} active={(active==1)} titlePosition="top" title={'EXCITED'}  color={'#59302d'} horizontal={"left"} vertical={"bottom"}/>
-                     <MusicCafel id={2} onPress={onPress}  active={(active==2)} titlePosition={"bottom"} title={'RELAXED'} color={'#293231'} horizontal={"right"} vertical={"top"}/>
-                     <MusicCafel id={3} onPress={onPress}  active={(active==3)} titlePosition={"bottom"} title={'BRIGHT'} color={'#564c3d'} horizontal={"left"} vertical={"top"}/>
+                    <MusicCafel id={0} onPress={onPress} active={(active==0)} titlePosition={"top"} title={'WARM'} color={'#2d2925'} horizontal={"right"} vertical={"bottom"}/>
+                    <MusicCafel id={1} onPress={onPress} active={(active==1)} titlePosition="top" title={'EXCITED'}  color={'#59302d'} horizontal={"left"} vertical={"bottom"}/>
+                    <MusicCafel id={2} onPress={onPress} active={(active==2)} titlePosition={"bottom"} title={'RELAXED'} color={'#293231'} horizontal={"right"} vertical={"top"}/>
+                    <MusicCafel id={3} onPress={onPress} active={(active==3)} titlePosition={"bottom"} title={'BRIGHT'} color={'#564c3d'} horizontal={"left"} vertical={"top"}/>
                 </ViewGroup>
         </SafeArea>
    ) 

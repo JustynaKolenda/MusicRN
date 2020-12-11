@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Animated, Dimensions, View } from 'react-native';
 import styled from 'styled-components/native';
 
@@ -21,21 +21,23 @@ const MusicCafel = (props:IMusicCafel) => {
         (!props.active)?
             <MusicType active={false} onPress={()=>props.onPress(props.id)}>
                 <WrapText titlePosition={props.titlePosition}>
-                    <TitleM>{props.title}</TitleM>
+                    <TitleM >{props.title}</TitleM>
                 </WrapText>
                 <Circle color={props.color} horizontal={props.horizontal} vertical={props.vertical}/>
             </MusicType>
         : 
             <MusicType active={true}>
-                 <Circle color={props.color} horizontal={props.horizontal} vertical={props.vertical}/>
+                 <WrapText titlePosition={props.titlePosition}>
+                    <WrapT titlePosition={props.titlePosition}>
+                       <TitleM >{props.title}</TitleM>
+                    </WrapT> 
+                </WrapText>
+                <Circle color={props.color} horizontal={props.horizontal} vertical={props.vertical}/>
                 <GroupSong> 
                     <SongCirleView>
                         <SongCirle source={{uri: 'ic_sound'}}/> 
                     </SongCirleView>
                 </GroupSong>
-                <WrapText titlePosition={"bottom"}>
-                <TitleM>{props.title}</TitleM>
-                </WrapText>
             </MusicType>
     )
 }
@@ -57,14 +59,31 @@ const MusicType = styled.TouchableOpacity({},(props:IMusicTypeP)=>{
 })
 
 const TitleM = styled.Text({
-    color: '#696970',
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: 20
+        color: '#696970',
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginTop: 20,
 })
 
+interface IWrapTProps{
+    titlePosition: "top" | "bottom",
+}
+
+const WrapT = styled.View({},(props:IWrapTProps)=>{
+    let titlePosition;
+    if(props.titlePosition == "top"){
+        titlePosition= {
+            top: -100
+        }
+    }
+    return({
+        ...titlePosition
+    })
+}
+
+)
 interface IWrapTextProps {
-    titlePosition: "top" | "bottom"
+    titlePosition: "top" | "bottom",
 }
 
 const WrapText = styled(Animated.View)({},(props:IWrapTextProps)=>{
@@ -137,7 +156,7 @@ const GroupSong = styled.TouchableOpacity({
     height: (songR + 15),
     borderRadius: songR,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
 })
 
 const SongCirleView = styled(View)({
