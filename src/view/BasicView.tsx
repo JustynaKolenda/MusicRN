@@ -1,9 +1,12 @@
 import React, { useCallback, useState } from 'react' 
-import { Animated, Dimensions, TouchableOpacity, View, } from 'react-native'
+import {  Dimensions, FlatList,  } from 'react-native'
 import styled from 'styled-components/native';
+import { CATEGORY } from '../variables/category';
+import CategoryView from './CategoryView';
 import MusicCafel from './MusicCafel';
 
 const {width, height} = Dimensions.get('window')
+
 
 const BasicView = () => {
 
@@ -12,22 +15,26 @@ const BasicView = () => {
     const onPress = useCallback((id:number)=>{
         setActive(id);
     },[])
+    const [activeCategory, setActiveCategory] = useState(0);
+
+    const onPressCategory = useCallback((id:number)=>{
+        setActiveCategory(id);
+    },[])
+
+    const renderItem = ({ item }:any) => (
+        <CategoryView id={item.id} onPress={onPressCategory} active={(activeCategory==item.id)} title={item.title} uri={item.uri} />
+    );
 
    return(
         <SafeArea>
                 <ViewArea>
-                    <GroupImage>
-                        <TouchImage>
-                            <ImageM source={{uri: 'consol'}}/>
-                        </TouchImage>
-                        <Title>Korg Per</Title>
-                    </GroupImage>
-                    <GroupImage>
-                        <TouchImage  >
-                            <ImageM source={{uri: 'electricPiano'}}/>
-                        </TouchImage>
-                        <Title>Korg 20</Title>
-                    </GroupImage>
+                    <FlatList
+                        data={CATEGORY}
+                        renderItem={renderItem}
+                        keyExtractor={item => item.id}
+                        showsHorizontalScrollIndicator={false}
+                        horizontal={true}
+                    />
                 </ViewArea>
                  <ViewGroup>
                     <MusicCafel id={0} onPress={onPress} active={(active==0)} titlePosition={"top"} title={'WARM'} color={'#2d2925'} horizontal={"right"} vertical={"bottom"}/>
@@ -43,36 +50,9 @@ const ViewArea = styled.View({
     backgroundColor: '#000000',
     height: 180,
     flexDirection: 'row',
+    width: '100%',
+    justifyContent: "center",
 })
-
-const Title = styled.Text({
-    fontWeight: 'bold',
-    fontSize: 15,
-    color: '#636160',
-    marginTop: 10
-})
-
-const GroupImage = styled.View({
-    alignItems: 'center',
-    justifyContent:'center'
-})
-
-
-const TouchImage = styled.TouchableOpacity({},()=>{
-    return({
-        
-    })
-}
-)
-
-const widthImage = (width/3)-10
-
-const ImageM = styled.Image({
-    width: widthImage,
-    height: widthImage-10,
-    marginLeft: 20,
-    marginTop: 20,
-}) 
 
 const SafeArea = styled.SafeAreaView({
     backgroundColor: '#29292e'
