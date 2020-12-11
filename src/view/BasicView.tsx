@@ -51,7 +51,7 @@ const BasicView = () => {
                 </ViewGroup>
                 <IndicatorView
                     indicator={
-                        <PagerDotIndicator pageCount={3} dotStyle={{backgroundColor:"#636160"}} selectedDotStyle={{backgroundColor:"white"}}/>
+                        <PagerDotIndicator pageCount={2} dotStyle={{backgroundColor:"#636160"}} selectedDotStyle={{backgroundColor:"white"}}/>
                     }>
                 </IndicatorView>
             </SafeArea>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Animated, Dimensions, View } from 'react-native';
 import styled from 'styled-components/native';
+import Sound from 'react-native-sound';
+
 
 const {width, height} = Dimensions.get('window')
 
@@ -16,7 +18,25 @@ interface IMusicCafel {
 }
 
 const MusicCafel = (props:IMusicCafel) => {
+    const PlayLocalSoundFile = (soundFileName:string) =>{
 
+        Sound.setCategory('Playback');
+        var mySound = new Sound(`${soundFileName}.mp3`, Sound.MAIN_BUNDLE ,( error )=>{
+            if(error){
+                console.log(error);
+            }else{
+                mySound.play((success)=>{
+                if(success){
+                    console.log('Sound playing')
+            }else{
+                console.log('Issue playing file');
+                }})
+            }
+        });
+            
+        mySound.setVolume(1);
+        mySound.release();
+    }
     return(
         (!props.active)?
             <MusicType active={false} onPress={()=>props.onPress(props.id)}>
@@ -33,7 +53,7 @@ const MusicCafel = (props:IMusicCafel) => {
                     </WrapT> 
                 </WrapText>
                 <Circle color={props.color} horizontal={props.horizontal} vertical={props.vertical}/>
-                <GroupSong> 
+                <GroupSong onPress={()=>PlayLocalSoundFile('exampleSong')}> 
                     <SongCirleView>
                         <SongCirle source={{uri: 'ic_sound'}}/> 
                     </SongCirleView>
