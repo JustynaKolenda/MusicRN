@@ -14,7 +14,8 @@ interface IMusicCafel {
     title: string,
     titlePosition: "top" | "bottom",
     active: boolean,
-    id: number
+    id: number,
+    soundFileName: string
 }
 
 const MusicCafel = (props:IMusicCafel) => {
@@ -53,7 +54,7 @@ const MusicCafel = (props:IMusicCafel) => {
                     </WrapT> 
                 </WrapText>
                 <Circle color={props.color} horizontal={props.horizontal} vertical={props.vertical}/>
-                <GroupSong onPress={()=>PlayLocalSoundFile('exampleSong')}> 
+                <GroupSong onPress={()=>PlayLocalSoundFile(props.soundFileName)}> 
                     <SongCirleView>
                         <SongCirle source={{uri: 'ic_sound'}}/> 
                     </SongCirleView>
