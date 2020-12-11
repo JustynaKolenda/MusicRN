@@ -7,7 +7,7 @@
  *
  * @format
  */
-
+import 'react-native-gesture-handler'
 import React, { Component } from 'react';
 import BasicView from './src/view/BasicView';
 import Navigation from './src/view/Navigation';
@@ -16,7 +16,7 @@ class App extends Component {
   render(){
     return (
       <>
-        <BasicView/>
+        <Navigation/>
       </>
     );
   }
