@@ -34,6 +34,7 @@ const BasicView = () => {
                         keyExtractor={item => item.id}
                         showsHorizontalScrollIndicator={false}
                         horizontal={true}
+                        style={{paddingLeft:20}}
                     />
                 </ViewArea>
                  <ViewGroup>
@@ -52,6 +53,7 @@ const ViewArea = styled.View({
     flexDirection: 'row',
     width: '100%',
     justifyContent: "center",
+    paddingLeft: 10
 })
 
 const SafeArea = styled.SafeAreaView({

@@ -31,9 +31,7 @@ const Title = styled.Text({
 const GroupImage = styled.View({
     alignItems: 'center',
     justifyContent:'center',
-    width: '50%',
-    marginLeft: 20,
-    paddingLeft:20
+    width: '60%',
 })
 
 interface ITouchImageProps {
