@@ -73,7 +73,7 @@ const WrapT = styled.View({},(props:IWrapTProps)=>{
     let titlePosition;
     if(props.titlePosition == "top"){
         titlePosition= {
-            top: -100
+            top: -70
         }
     }
     return({
