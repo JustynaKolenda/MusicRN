@@ -6,7 +6,7 @@ export const CATEGORY = [
     },
     {
       id: '1',
-      uri: 'electricPiano',
+      uri: 'electricpiano',
       title: 'Korg 20'
     },
   ];

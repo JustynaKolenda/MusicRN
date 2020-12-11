@@ -16,7 +16,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* MusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MusicTests.m */; };
 		485B06B82583677B00418511 /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 485B06B72583677B00418511 /* sound.wav */; };
-		485B06BA25836A6500418511 /* exampleSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 485B06B925836A6500418511 /* exampleSong.mp3 */; };
+		485B06BA25836A6500418511 /* examplesong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 485B06B925836A6500418511 /* examplesong.mp3 */; };
 		48A4FF0D871E2C6DD7867808 /* libPods-Music-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2A29115B3A49AF1A4F239D /* libPods-Music-tvOSTests.a */; };
 		4C2BBD5F223C1D145DABEFAC /* libPods-Music-MusicTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170FDB1E1DEF1BC9D7277BE /* libPods-Music-MusicTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -58,7 +58,7 @@
 		2D02E4901E0B4A5D006451C7 /* Music-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Music-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2A29115B3A49AF1A4F239D /* libPods-Music-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Music-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		485B06B72583677B00418511 /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
-		485B06B925836A6500418511 /* exampleSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = exampleSong.mp3; sourceTree = "<group>"; };
+		485B06B925836A6500418511 /* examplesong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = examplesong.mp3; sourceTree = "<group>"; };
 		4E309FD1EAACC53502BB0E47 /* Pods-Music-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Music-tvOS/Pods-Music-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		7F0B0B4E143F2A0FFAF046F4 /* Pods-Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music.debug.xcconfig"; path = "Target Support Files/Pods-Music/Pods-Music.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Music/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				485B06B925836A6500418511 /* exampleSong.mp3 */,
+				485B06B925836A6500418511 /* examplesong.mp3 */,
 				485B06B72583677B00418511 /* sound.wav */,
 				13B07FAE1A68108700A75B9A /* Music */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -345,7 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				485B06BA25836A6500418511 /* exampleSong.mp3 in Resources */,
+				485B06BA25836A6500418511 /* examplesong.mp3 in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				485B06B82583677B00418511 /* sound.wav in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
